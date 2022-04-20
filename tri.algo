@@ -1,0 +1,16 @@
+ALGORITHM tri
+VAR
+    tab : ARRAY_OF integer[10];
+    i, key, j: integer
+BEGIN
+    Read (key);
+    FOR i FROM 1 TO tab.length STEP 1  DO
+        key := tab[i];
+        j:=i-1;
+        WHILE (j>=0 && tab[j]>key) DO
+         tab[j+1]:= tab[j];
+         j:=j-1;
+        END_WHILE
+        tab[j+1]:=key;
+    END_FOR
+END
